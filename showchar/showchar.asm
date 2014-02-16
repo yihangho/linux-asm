@@ -52,8 +52,9 @@ ClrVid:
 	mov ecx, ROWS
 
 PtEOL:
-	add edi, COLS
-	mov byte[edi], EOL
+	mov al, EOL
+	add edi, COLS-1
+	stosb
 	loop PtEOL
 
 	pop edi
